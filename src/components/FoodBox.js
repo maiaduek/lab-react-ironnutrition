@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Button } from 'antd';
+// import { configConsumerProps } from 'antd/lib/config-provider';
 
 function FoodBox(props) {
   return (
@@ -14,7 +15,7 @@ function FoodBox(props) {
         <p>
           <b>Total Calories: {props.food.calories * props.food.servings} </b> kcal
         </p>
-        <Button type="primary"> Delete </Button>
+        <Button type="primary" onClick={(e) => props.removeFood(props.food.name)}> Delete </Button>
       </Card>
     </Col>
   );
