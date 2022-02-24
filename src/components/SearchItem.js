@@ -8,7 +8,7 @@ const SearchItem = (props) => {
   const search = (input) => {
     setSearchFood(input);
     let newFoodsArr = props.foodsArr.filter((foodItem) => {
-      if (foodItem.name.toLowerCase().includes(input)) {
+      if (foodItem.name.toLowerCase().includes(input.toLowerCase())) {
         return foodItem
       }
     })
