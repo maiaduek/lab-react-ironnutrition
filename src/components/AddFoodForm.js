@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'antd';
 
 const AddFoodForm = (props) => {
-  const [newFood, setNewFood] = React.useState('')
+  // const [newFood, setNewFood] = React.useState('')
   const [createName, setCreateName] = React.useState('')
   const [createImage, setCreateImage] = React.useState('')
   const [createCalories, setCreateCalories] = React.useState('')
@@ -16,6 +16,7 @@ const AddFoodForm = (props) => {
     foodObj['calories'] = parseInt(createCalories)
     foodObj['servings'] = parseInt(createServings)
     props.setFoodsArr(props.foodsArr.concat(foodObj))
+    props.setSearchFood(props.foodsArr.concat(foodObj))
     setCreateName('')
     setCreateImage('')
     setCreateCalories('')

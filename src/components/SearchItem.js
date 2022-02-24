@@ -1,6 +1,5 @@
 import React from 'react';
 import { Input } from 'antd';
-import leFoods from '../foods.json';
 
 
 const SearchItem = (props) => {
@@ -8,12 +7,12 @@ const SearchItem = (props) => {
 
   const search = (input) => {
     setSearchFood(input);
-    let newFoodsArr = leFoods.filter((foodItem) => {
+    let newFoodsArr = props.foodsArr.filter((foodItem) => {
       if (foodItem.name.includes(input)) {
         return foodItem
       }
     })
-    props.setFoodsArr(newFoodsArr)
+    props.setSearchFood(newFoodsArr)
   }
 
   return (
@@ -22,7 +21,6 @@ const SearchItem = (props) => {
       <form>
         <Input value={searchFood} onChange={(e) => search(e.target.value)} />
       </form>
-      
     </div>
   )
 }
